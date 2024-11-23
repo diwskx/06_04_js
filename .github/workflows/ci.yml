@@ -14,10 +14,12 @@ jobs:
         uses: actions/checkout@v4 # Update to v4
       # 1. Установка зависимостей
       - name: Install dependencies
-        uses: npm install
+        run:
+          npm install
       # 2. Сборка проекта
       - name: Build JS-project
-        uses: npm run build  
+        run:
+          npm run build  
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3 # Update to v3
         with:
