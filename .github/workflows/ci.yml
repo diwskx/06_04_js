@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3 # default
+        uses: actions/checkout@v4 # default 3
       # 1. Установка зависимостей
       - name: Install dependencies
         run:
@@ -21,7 +21,7 @@ jobs:
         run:
           npm run build  
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v1 # default
+        uses: actions/upload-pages-artifact@v3 # default 1
         with:
           path: build
   deploy:
@@ -36,5 +36,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1 # default
+        uses: actions/deploy-pages@v4 # default 1
 
